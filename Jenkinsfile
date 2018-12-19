@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'java -version'
+                sh 'echo "pipeline test"
             }
         }
     }
