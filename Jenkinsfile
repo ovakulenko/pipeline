@@ -3,11 +3,13 @@ pipeline {
     triggers {
         cron('H * * * *')
     }
+    environment {
+        DB_ENGINE    = 'sqlite'
+    }
     stages {
         stage('build') {
             steps {
-                sh 'java -version'
-                sh 'echo "pipeline test"'
+                sh 'printenv'
             }
         }
     }
@@ -23,10 +25,6 @@ pipeline {
         }
         unstable {
             echo 'This will run only if the run was marked as unstable'
-        }
-        changed {
-            echo 'This will run only if the state of the Pipeline has changed'
-            echo 'For example, if the Pipeline was previously failing but is now successful'
         }
     }
 }
