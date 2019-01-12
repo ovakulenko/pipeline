@@ -5,7 +5,7 @@ pipeline {
             steps {
                 sh 'java -version'
                 sh 'echo "pipeline test"'
-		sh 'echo "Now with tag"'
+		sh 'echo "Now with second tag"'
             }
         }
     }
